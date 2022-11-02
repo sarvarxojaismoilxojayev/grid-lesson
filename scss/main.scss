@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    margin-top: 10px;
+}
+
+%style {
+    padding: 25px 35px;
+    background: rgba(20, 117, 141, 0.801);
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.header {
+    @extend %style; 
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.582);
+    color: white;
+    text-align: center;
+}
+
+.menu {
+    @extend %style;
+    padding: 20px 30px;
+    background: rgba(177, 13, 13, 0.959);
+    color: white;
+    text-align: center;
+    grid-column: span 3;
+}
+
+.hero {
+    @extend %style;
+    grid-row: span 3;
+    grid-column: span 4;
+    padding: 120px;
+}
+
+.main {
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.664);
+    color: white;
+    text-align: center;
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 100px;
+}
+
+.image {
+    @extend %style;
+    background: rgba(102, 209, 75, 0.582);
+    grid-column-end: 5;
+}
+
+.extra {
+    @extend %style;
+    background: rgb(95, 214, 72);
+    grid-column-end: 5
+}
+
+.banner {
+    @extend %style;
+    background: rgba(216, 219, 40, 0.582);
+    grid-column: span 4;
+}
+
+@media (max-width: 920px) {
+    .container {
+        width: 150px;
+        margin-left: 0px;
+    }
+
+    .header {
+        grid-column: span 4;
+    }
+
+    .menu {
+        grid-area: 5;
+        grid-row-end: span 10;
+        max-width: 170px;
+    }
+
+    .main {
+        grid-column: span 3;
+        padding: 150px;
+    }
+
+    .banner {
+        grid-area: 7;
+        grid-column: span 5;
+    }
+
+    .image {
+        grid-column-end: 5;
+    }
+
+    .extra {
+        grid-area: 8;
+        width: 340px;
+        grid-column-end: 3;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .header {
+        width: 83%;
+    }
+
+    .menu {
+        padding: 20px 33.2%;
+    }
+
+    .hero {
+        width: 77%;
+        padding: 50px;
+    }
+
+    .main {
+        width: 77%;
+        padding: 50px;
+    }
+
+    .image {
+        width: 81.4%;
+    }
+    
+    .extra {
+        width: 81.4%;
+    }
+
+    .banner {
+        width: 81.4%;
+    }
+}
